@@ -11,12 +11,6 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[stage1]: ./examples/stage1.jpg "Stage1: Grayscale"
-[stage2]: ./examples/stage2.jpg "Stage2: Gaussian Kernel"
-[stage3]: ./examples/stage3.jpg "Stage3: Canny Edge Detection"
-[stage4]: ./examples/stage4.jpg "Stage4: Region Selection"
-[stage5]: ./examples/stage5.jpg "Stage5: Hough Transform"
-[stage6]: ./examples/stage6.jpg "Stage6: Superimpose Lane Detection Over Original Image"
 
 ---
 
@@ -30,19 +24,40 @@ In order to draw a single line on the left and right lanes, I modified the draw_
 
 If you'd like to include images to show how the pipeline works, here is how to include an image: 
 
-![alt text][stage1]
+##### Stage 1: Grayscale
+<img width="460" height="300" src="./examples/stage1.jpg">
+
+##### Stage 2: Gaussian Filter
+<img width="460" height="300" src="./examples/stage2.jpg">
+
+##### Stage 3: Canny Edge Detection
+<img width="460" height="300" src="./examples/stage3.jpg">
+
+##### Stage 4: Region Selection
+<img width="460" height="300" src="./examples/stage4.jpg">
+
+##### Stage 5: Hough Transform
+<img width="460" height="300" src="./examples/stage5.jpg">
+
+##### Stage 6: Superimpose Hough Lines Onto Original Image
+<img width="460" height="300" src="./examples/stage6.jpg">
 
 
 ### 2. Identify potential shortcomings with your current pipeline
 
+I think there are a lot of shortcomings with the current pipeline.  For one, the pipeline doesn't detect curved lane lines which might occur when the highway meanders.  
 
-One potential shortcoming would be what would happen when ... 
+Also, the region selection portion of the pipeline always selects the same region instead of finding a region based on concepts such as foreground, background, etc.  Because of this fact, my current pipeline cannot detect lines accurately on the challenge.mp4 video.  Sure, I could retune all of my parameters, but that seems like the wrong approach if we're looking to improve things.
 
-Another shortcoming could be ...
+A major major shortcoming of my pipeline is that all of my paramters where hand-tuned.  That is, none of them were fitted to the data using more rigorous and reliable methods.
 
+The model doesn't use past experiences in order to better predict future ones.  Having this would likely make the output a lot more robust to variations in data.
 
 ### 3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...
+Our parameters should be tuned automatically, based on more reliable and rigorous methods.  This parameter tuning can include our region selection.
 
-Another potential improvement could be to ...
+Furthermore, we should make changes so that we can fit curved roads.
+
+Using a sequential model to predict future lines would allow our model to draw lane lines even when they aren't as clear.  It might even allow us to draw lane lines even when they don't exist!
+
