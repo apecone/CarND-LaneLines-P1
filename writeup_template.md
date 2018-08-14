@@ -11,7 +11,12 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/grayscale.jpg "Grayscale"
+[stage1]: ./examples/stage1.jpg "Stage1: Grayscale"
+[stage2]: ./examples/stage2.jpg "Stage2: Gaussian Kernel"
+[stage3]: ./examples/stage3.jpg "Stage3: Canny Edge Detection"
+[stage4]: ./examples/stage4.jpg "Stage4: Region Selection"
+[stage5]: ./examples/stage5.jpg "Stage5: Hough Transform"
+[stage6]: ./examples/stage6.jpg "Stage6: Superimpose Lane Detection Over Original Image"
 
 ---
 
@@ -25,7 +30,7 @@ In order to draw a single line on the left and right lanes, I modified the draw_
 
 If you'd like to include images to show how the pipeline works, here is how to include an image: 
 
-![alt text][image1]
+![alt text][stage1]
 
 
 ### 2. Identify potential shortcomings with your current pipeline
