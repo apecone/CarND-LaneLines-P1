@@ -31,6 +31,11 @@ In order to draw a single line on the left and right lanes, I modified the draw_
 If you'd like to include images to show how the pipeline works, here is how to include an image: 
 
 ![alt text][stage1]
+![alt text][stage2]
+![alt text][stage3]
+![alt text][stage4]
+![alt text][stage5]
+![alt text][stage6]
 
 
 ### 2. Identify potential shortcomings with your current pipeline
